@@ -5,7 +5,7 @@ The is simple weather react app with react and redux
   - respond with 3-day forecast for the zip location
   - support response content types: "text/plain" and "application/json"
   X respond accordingly when Zip code is malformed or not found
-  X respond accordingly when external service is not available (Right now only shows waiting for data)
+  X respond accordingly when external service is not available (Right now only shows waiting for data).  Have to do error handling and messaging.
 
 Optional features:
   - Add 7-day forecast; (Save in LocalStorage)
