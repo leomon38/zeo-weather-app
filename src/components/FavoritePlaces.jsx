@@ -1,17 +1,33 @@
-import React, {useState} from 'react'
-import {useSelector} from 'react-redux'
+import React, {useState, useEffect} from 'react'
+import {useSelector, useDispatch} from 'react-redux'
 import './FavoritePlaces.css'
 import  FavoriteIcon from "@material-ui/icons/Favorite"
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder"
+import { GetData } from '../redux/WeatherActions'
 
 const storage = window.localStorage;
 
 function FavoritePlaces() {
     const appState = useSelector(state => state.results);
     const city = appState.city;
+    const dispatch = useDispatch();
 
     const [liked,  setLiked] = useState(false);
     const [favoriteCities, setFavoriteCities] = useState([]);
+
+    useEffect(() => {
+        try {
+            let result = storage.getItem("FavoriteCity");  
+            let resultArr = result.split(',')
+            setFavoriteCities(resultArr);   
+        }catch(err){ }
+    },[])
+
+    const handleSelected = e => {
+        const cityZip = e.target.value;
+        const zip = cityZip.split('|')[1];
+        dispatch(GetData(zip));
+    }
 
     const saveToFavorite = () => {  
         let result = '';
@@ -21,7 +37,7 @@ function FavoritePlaces() {
             //new Set([city])
             storage.setItem("FavoriteCity", city)
         } 
-
+        console.log(result)
         if(result === '') {
             return;
         }
@@ -54,9 +70,15 @@ function FavoritePlaces() {
                 }   
 
             </div> 
-            <select >
+            <select onChange={e => handleSelected(e)}>
             {
-               favoriteCities.map(favorCity =>  <option key={favorCity} value={favorCity} >{favorCity}</option>)
+               favoriteCities.map(favorCity => ( 
+                    <option 
+                        key={favorCity} 
+                        value={favorCity}                         
+                        >{favorCity}</option>
+                
+                ))
             }
             </select>
                            

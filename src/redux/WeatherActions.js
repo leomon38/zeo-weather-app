@@ -12,13 +12,13 @@ export const GetData = (zipCode) =>
         })
 
         const {city, periods} = await fetchWeatherData(zipCode);
-
+        let cityZip = city + "|" + zipCode;
        //console.log(JSON.stringify({type: WEATHER_LOADING_SUCCESS,payload: periods,city}))
 
         dispatch({
             type: WEATHER_LOADING_SUCCESS,
             payload: periods,
-            city
+            city : cityZip
         })
 
     }catch(err) {

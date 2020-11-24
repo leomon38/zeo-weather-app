@@ -9,7 +9,7 @@ The is simple weather react app with react and redux
 
 Optional features:
   - Add 7-day forecast; (Save in LocalStorage)
-  - Save Favorite Locations (Save to Favorite works not finish with refetch the data)
+  - Save Favorite Locations (Dropdown select menu)
 
 More to do
   - Move out from LocalSotrage to may be sign in require to save personalized favorite locations. (Google firebase/ Authenication....)
