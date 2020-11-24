@@ -1,0 +1,28 @@
+.content {
+   display: center;
+   align-items: center;
+   background-color: skyblue;
+   width: 90vw;
+   height: 100vh;
+   top: 40px;
+   position: relative;
+   overflow: scroll;
+}
+
+.daily__weather {
+    display:flex;
+    justify-content: space-between;
+    flex-direction: row;
+    position: relative;
+    margin: 20px;
+    padding: 20px;
+    border-bottom: 5px solid lightgrey;
+    cursor: pointer;
+    font-weight: 900 !important;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+.daily__weather > .icon {
+    width: 70px;
+    height: 70px;
+}

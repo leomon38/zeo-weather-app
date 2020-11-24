@@ -1,0 +1,50 @@
+.App {
+  text-align: center;
+  background: grey;
+}
+
+.App-link {
+  color: rgb(112, 76, 182);
+}
+
+@keyframes App-logo-float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px)
+  }
+  100% {
+    transform: translateY(0px)
+  }
+}
+
+
+.weather__result {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.weather__search {
+  justify-content: space-between;
+  top:20px;
+  margin: 10px;
+  background: orange;
+}
+
+.weather__input {
+  border: none;
+  outline-width: 0;
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px solid grey;
+}
+
+.weather__button {
+  margin: 20px;
+  background-color: white !important; 
+  color: rgb(51, 49, 206) !important;
+  font-weight: 900 !important;
+  text-transform:  inherit !important;
+}
